@@ -7,23 +7,10 @@
 //
 
 import UIKit
+var items = [ChecklistItem]()
 
 class ChecklistViewController: UITableViewController {
-    var items = [ChecklistItem]()
-    
-//    let row0text = "Walk the dog"
-//    let row1text = "Brush teeth"
-//    let row2text = "Learn iOS development"
-//    let row3text = "Soccer practice"
-//    let row4text = "Eat ice cream"
-//
-//    var row0checked = true
-//    var row1checked = false
-//    var row2checked = true
-//    var row3checked = false
-//    var row4checked = false
-
-    //* its false here but the prototype is ticked, causes confuses and bugs
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +36,7 @@ class ChecklistViewController: UITableViewController {
         item5.text = "Eat ice cream"
         items.append(item5)
     }
-    }
     
-    //* add this in to solve this, joins the data source to the table view prototype cell, table view calls this method before returning the cell
     func configureCheckmark(for cell: UITableViewCell, at indexPath: IndexPath) {
         let item = items[indexPath.row]
         if item.checked {
@@ -59,7 +44,7 @@ class ChecklistViewController: UITableViewController {
         } else {
             cell.accessoryType = .none
         }
-}
+    }
 
     // MARK:- Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,11 +52,11 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //for this table view "" (input), what is the cell for this row "e.g.5" (input)
+        //for this table view "" (input), what is the cell for this row "e.g. 5" (input)
         
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
-        //for row (input) the cell is the table view cell 'checklist'
+        //for row (input) the cell is the table view cell 'checklistItem'
         
         let item = items[indexPath.row]
         
@@ -81,7 +66,7 @@ class ChecklistViewController: UITableViewController {
         label.text = item.text
         configureCheckmark(for: cell, at: indexPath)
         return cell
-}
+    }
     
     // MARK:- Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {//method called when tap- what happens (e.g 5th) row
@@ -95,4 +80,6 @@ class ChecklistViewController: UITableViewController {
             configureCheckmark(for: cell, at: indexPath)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
 }
