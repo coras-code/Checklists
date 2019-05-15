@@ -23,4 +23,9 @@ class AddItemViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    // MARK:- Table View Delegates
+    //table view sends the delegate a willSelectRowAt message-select this row. the delegate answers: not allowed to
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+            return nil
+    }
 }
