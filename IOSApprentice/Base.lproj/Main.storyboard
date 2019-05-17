@@ -69,18 +69,22 @@
                         <sections>
                             <tableViewSection id="eT4-Zo-5Cz">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fsD-6j-9MB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="fsD-6j-9MB">
                                         <rect key="frame" x="0.0" y="35" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fsD-6j-9MB" id="da8-Lb-rCu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Xl-JZ-gNl">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of that Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Xl-JZ-gNl">
                                                     <rect key="frame" x="15" y="5" width="290" height="33.5"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="o6g-kL-7Yt" eventType="editingDidEndOnExit" id="pWH-fP-5w1"/>
+                                                        <outlet property="delegate" destination="o6g-kL-7Yt" id="Lcb-Qd-VQU"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -107,12 +111,16 @@
                                 <action selector="cancel" destination="o6g-kL-7Yt" id="6Qf-v1-hjz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="aY3-og-Yhm">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="aY3-og-Yhm">
                             <connections>
                                 <action selector="done" destination="o6g-kL-7Yt" id="Mj4-uW-a2Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="aY3-og-Yhm" id="yGe-8G-CvF"/>
+                        <outlet property="textField" destination="8Xl-JZ-gNl" id="Bfu-qF-mp0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBr-9o-EfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
