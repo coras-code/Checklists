@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
     var items = [ChecklistItem]()
    
     override func viewDidLoad() {
@@ -104,6 +104,13 @@ class ChecklistViewController: UITableViewController {
         tableView.insertRows(at: indexPaths, with: .automatic)
     }
     
-   
+    // MARK:- AddItemViewController Delegates
+    func addItemViewControllerDidCancel(controller: AddItemViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addITemViewController(controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+        navigationController?.popViewController(animated: true)
+    }
     
 }
