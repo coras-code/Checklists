@@ -120,6 +120,23 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         navigationController?.popViewController(animated: true)
     }
     
+    func addITemViewController(controller: AddItemViewController, didFinishEditing item: ChecklistItem) {
+        if let index = items.index(of: item) { //add NSObject to CheckListItem.swift
+            //OR can use an emuerated array loop, where index === item
+//            for (index, checklistItem) in items.enumerated() {
+//              if checklistItem === item {
+//                     use this index
+//        }
+//            }
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath){
+                configureText(for: cell, with: item)
+        }
+       
+        }
+        navigationController?.popViewController(animated: true)
+
+    }
     
     //MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

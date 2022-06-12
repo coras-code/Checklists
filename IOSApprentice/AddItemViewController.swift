@@ -13,6 +13,8 @@ protocol AddItemViewControllerDelegate: class {
     
     func addItemViewController(controller: AddItemViewController, didFinishAdding item: ChecklistItem)
     
+    func addITemViewController(controller: AddItemViewController, didFinishEditing item: ChecklistItem)
+    
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
@@ -49,9 +51,14 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func done() {
         //navigationController?.popViewController(animated: true)
+        if let item = itemToEdit {
+            item.text = textField.text!
+            delegate?.addITemViewController(controller: self, didFinishEditing: item)
+        } else {
             let item = ChecklistItem()
             item.text = textField.text!
             delegate?.addItemViewController(controller: self, didFinishAdding: item)
+        }
             
         
     }
