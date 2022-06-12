@@ -11,13 +11,15 @@ import UIKit
 protocol AddItemViewControllerDelegate: class {
     func addItemViewControllerDidCancel(controller: AddItemViewController)
     
-    func addITemViewController(controller: AddItemViewController, didFinishAdding item: ChecklistItem)
+    func addItemViewController(controller: AddItemViewController, didFinishAdding item: ChecklistItem)
+    
 }
 
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    var itemToEdit: ChecklistItem?
     
     weak var delegate: AddItemViewControllerDelegate?
     
@@ -30,6 +32,13 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
+        
+        //only if user wants to edit an item will be not nil
+        if let item = itemToEdit {
+            title = "Edit Item"
+            textField.text = item.text
+            doneBarButton.isEnabled = true
+        }
     }
     
     // MARK:- Actions
@@ -40,13 +49,9 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func done() {
         //navigationController?.popViewController(animated: true)
-        
-        let item = ChecklistItem()
-        item.text = textField.text!
-        
-        delegate?.addITemViewController(controller: self, didFinishAdding: item)
-//
-        print("Contents of the text field: \(textField.text!)")
+            let item = ChecklistItem()
+            item.text = textField.text!
+            delegate?.addItemViewController(controller: self, didFinishAdding: item)
             
         
     }
