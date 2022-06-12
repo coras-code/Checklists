@@ -34,15 +34,18 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK:- Actions
     @IBAction func cancel() {
+//        navigationController?.popViewController(animated: true)
         delegate?.addItemViewControllerDidCancel(controller: self)
     }
     
     @IBAction func done() {
+        //navigationController?.popViewController(animated: true)
+        
         let item = ChecklistItem()
         item.text = textField.text!
         
         delegate?.addITemViewController(controller: self, didFinishAdding: item)
-        
+//
         print("Contents of the text field: \(textField.text!)")
             
         
