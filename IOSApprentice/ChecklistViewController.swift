@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
+class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
     var items = [ChecklistItem]()
    
     override func viewDidLoad() {
@@ -105,12 +105,12 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
 //        tableView.insertRows(at: indexPaths, with: .automatic)
 //    }
     
-    // MARK:- AddItemViewController Delegates
-    func addItemViewControllerDidCancel(controller: AddItemViewController) {
+    // MARK:- ItemDetailViewController Delegates
+    func itemDetailViewControllerDidCancel(controller: ItemDetailViewController) {
         navigationController?.popViewController(animated: true)
     }
     
-    func addItemViewController(controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+    func itemDetailViewController(controller: ItemDetailViewController, didFinishAdding item: ChecklistItem) {
         let newRowIndex = items.count
         items.append(item)
         
@@ -120,7 +120,7 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
         navigationController?.popViewController(animated: true)
     }
     
-    func addITemViewController(controller: AddItemViewController, didFinishEditing item: ChecklistItem) {
+    func itemDetailViewController(controller: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
         if let index = items.index(of: item) { //add NSObject to CheckListItem.swift
             //OR can use an emuerated array loop, where index === item
 //            for (index, checklistItem) in items.enumerated() {
@@ -141,10 +141,10 @@ class ChecklistViewController: UITableViewController, AddItemViewControllerDeleg
     //MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddItem" {
-            let controller = segue.destination as! AddItemViewController
+            let controller = segue.destination as! ItemDetailViewController
             controller.delegate = self
         } else if segue.identifier == "EditItem" {
-            let controller = segue.destination as! AddItemViewController
+            let controller = segue.destination as! ItemDetailViewController
             controller.delegate = self
             
             //sender in this case is the table cell that is tapped, so we can access the indexPath from this

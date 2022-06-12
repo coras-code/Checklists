@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13914C6F228B48DA00FF5883 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13914C6E228B48DA00FF5883 /* AddItemViewController.swift */; };
+		13914C6F228B48DA00FF5883 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13914C6E228B48DA00FF5883 /* ItemDetailViewController.swift */; };
 		13AF233021E5016900FC5D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF232F21E5016900FC5D2E /* AppDelegate.swift */; };
 		13AF233221E5016900FC5D2E /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AF233121E5016900FC5D2E /* ChecklistViewController.swift */; };
 		13AF233521E5016900FC5D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13AF233321E5016900FC5D2E /* Main.storyboard */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13914C6E228B48DA00FF5883 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		13914C6E228B48DA00FF5883 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		13AF232C21E5016900FC5D2E /* IOSApprentice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSApprentice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AF232F21E5016900FC5D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13AF233121E5016900FC5D2E /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 				13AF233821E5016B00FC5D2E /* LaunchScreen.storyboard */,
 				13AF233B21E5016B00FC5D2E /* Info.plist */,
 				13F296C42200AA18007D955D /* ChecklistItem.swift */,
-				13914C6E228B48DA00FF5883 /* AddItemViewController.swift */,
+				13914C6E228B48DA00FF5883 /* ItemDetailViewController.swift */,
 			);
 			path = IOSApprentice;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13AF233221E5016900FC5D2E /* ChecklistViewController.swift in Sources */,
-				13914C6F228B48DA00FF5883 /* AddItemViewController.swift in Sources */,
+				13914C6F228B48DA00FF5883 /* ItemDetailViewController.swift in Sources */,
 				13F296C52200AA18007D955D /* ChecklistItem.swift in Sources */,
 				13AF233021E5016900FC5D2E /* AppDelegate.swift in Sources */,
 			);

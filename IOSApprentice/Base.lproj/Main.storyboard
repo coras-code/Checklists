@@ -17,20 +17,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="rj1-HC-ofe">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rj1-HC-ofe" id="1im-Gj-CDt">
-                                    <rect key="frame" x="0.0" y="0.0" width="261" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="261" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2R-oG-OT3">
-                                            <rect key="frame" x="26" y="11" width="219" height="21"/>
+                                            <rect key="frame" x="26" y="11" width="219" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0H-gT-o5c">
-                                            <rect key="frame" x="5" y="5" width="15" height="33"/>
+                                            <rect key="frame" x="5" y="5" width="15" height="33.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="15" id="tBn-Jk-5qL"/>
                                             </constraints>
@@ -74,7 +74,7 @@
         <!--Add Item-->
         <scene sceneID="4PC-tw-vT6">
             <objects>
-                <tableViewController id="o6g-kL-7Yt" customClass="AddItemViewController" customModule="IOSApprentice" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="o6g-kL-7Yt" customClass="ItemDetailViewController" customModule="IOSApprentice" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Tiy-T5-vkM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

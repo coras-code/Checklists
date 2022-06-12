@@ -8,22 +8,22 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate: class {
-    func addItemViewControllerDidCancel(controller: AddItemViewController)
+protocol ItemDetailViewControllerDelegate: class {
+    func itemDetailViewControllerDidCancel(controller: ItemDetailViewController)
     
-    func addItemViewController(controller: AddItemViewController, didFinishAdding item: ChecklistItem)
+    func itemDetailViewController(controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
     
-    func addITemViewController(controller: AddItemViewController, didFinishEditing item: ChecklistItem)
+    func itemDetailViewController(controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
     
 }
 
-class AddItemViewController: UITableViewController, UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     var itemToEdit: ChecklistItem?
     
-    weak var delegate: AddItemViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,18 +46,18 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     // MARK:- Actions
     @IBAction func cancel() {
 //        navigationController?.popViewController(animated: true)
-        delegate?.addItemViewControllerDidCancel(controller: self)
+        delegate?.itemDetailViewControllerDidCancel(controller: self)
     }
     
     @IBAction func done() {
         //navigationController?.popViewController(animated: true)
         if let item = itemToEdit {
             item.text = textField.text!
-            delegate?.addITemViewController(controller: self, didFinishEditing: item)
+            delegate?.itemDetailViewController(controller: self, didFinishEditing: item)
         } else {
             let item = ChecklistItem()
             item.text = textField.text!
-            delegate?.addItemViewController(controller: self, didFinishAdding: item)
+            delegate?.itemDetailViewController(controller: self, didFinishAdding: item)
         }
             
         
